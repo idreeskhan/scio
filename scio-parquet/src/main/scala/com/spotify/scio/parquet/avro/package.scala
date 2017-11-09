@@ -122,8 +122,7 @@ package object avro {
    * Enhanced version of [[com.spotify.scio.values.SCollection SCollection]] with Parquet Avro
    * methods.
    */
-  implicit class ParquetAvroSCollection[T : ClassTag]
-  (val self: SCollection[T]) {
+  implicit class ParquetAvroSCollection[T: ClassTag](val self: SCollection[T]) {
     /**
      * Save this SCollection of Avro records as a Parquet file.
      * @param schema must be not null if `T` is of type
